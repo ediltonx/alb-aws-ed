@@ -10,6 +10,17 @@ services:
     networks:
       - idade-network
 
+  frontend2:
+    build:
+      dockerfile: ./frontend2/Dockerfile
+      context: .
+    ports:
+      - "84:80"
+    depends_on:
+      - backend
+    networks:
+      - idade-network
+
   backend:
     build: 
       dockerfile: ./backend/Dockerfile
